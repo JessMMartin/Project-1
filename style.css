@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.7rem;
+  font-family: "Ysabeau Office", sans-serif;
+  background: #7f7fd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #91eae4,
+    #86a8e7,
+    #7f7fd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #ececec;
+  padding: 4rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.product {
+  overflow: hidden;
+  background: #ffffff;
+  color: #21201e;
+  text-align: center;
+  width: 240px;
+  height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  margin: 1%;
+}
+
+.product:hover img {
+  scale: 1.1;
+}
+
+.product:hover {
+  box-shadow: 5px 15px 25px #eeeeee;
+}
+
+.product img {
+  height: 200px;
+  margin: 1rem;
+  transition: all 0.3s;
+}
+
+.product a:hover {
+  transform: scale(1.1);
+}
+p1 {
+  font-size: 5pc;
+  font-family: "Dancing Script", cursive;
+  color: #7f7fd5;
+}
