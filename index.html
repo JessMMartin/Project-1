@@ -50,32 +50,34 @@
       <div class="product">
         <img src="/Gem Pics/Moss Agate.jpg" />
         <p>Moss Agate £9.99</p>
-        <button class="button" onclick="addToCart('Snowflake Obsidian', 9.99)">Add to Cart</button>
+        <button class="button" onclick="addToCart('Moss Agate', 9.99)">Add to Cart</button>
       </div>
       <div class="product">
         <img src="/Gem Pics/Tigers Eye.jpg" />
-        <p>Tigers Eye £7.99</p>
-        <button class="button" onclick="addToCart('Snowflake Obsidian', 9.99)">Add to Cart</button>
+        <p>Tiger's Eye £7.99</p>
+        <button class="button" onclick="addToCart('Tigers Eye', 7.99)">Add to Cart</button>
       </div>
       <div class="product">
         <img src="/Gem Pics/Lapiz Lazuli.jpg" />
         <p>Lapiz Lazuli £9.99</p>
-        <button class="button" onclick="addToCart('Snowflake Obsidian', 9.99)">Add to Cart</button>
+        <button class="button" onclick="addToCart('Lapiz Lazuli', 9.99)">Add to Cart</button>
       </div>
       <div class="product">
         <img src="/Gem Pics/Dragon Blood .jpg" />
         <p>Dragon Blood £7.99</p>
-        <button class="button" onclick="addToCart('Snowflake Obsidian', 9.99)">Add to Cart</button>
+        <button class="button" onclick="addToCart('Dragon Blood', 9.99)">Add to Cart</button>
       </div>
     </div>
     <div class="cart">
       <div class="cart-header"><div</div>
       <div class="cart-items"></div>
       <div class="cart-footer">
-        <div class="subtotal">Subtotal: £<span id="subtotalAmount">0.00</span></div>
         <div class="checkout">Proceed to checkout</div>
       </div>
     </div>
+    <ul id="cartItemsList"></ul>
+    <button class="button" onclick="emptyCart()">Empty Cart</button>
+    <div class="subtotal">Subtotal: £<span id="subtotalAmount">0.00</span></div>
   </body>
   <script src="app.js"></script>
   <footer></footer>

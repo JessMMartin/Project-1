@@ -10,6 +10,7 @@ function addToCart(productName, price) {
   updateCartItemsList();
 
   alert("Product added to cart!");
+  saveCartToLocalStorage();
 }
 
 function removeFromCart(index) {
@@ -18,6 +19,19 @@ function removeFromCart(index) {
 
   updateSubtotal();
   updateCartItemsList();
+
+  saveCartToLocalStorage();
+}
+
+function emptyCart() {
+  cartItems = [];
+  subtotal = 0.0;
+
+  updateSubtotal();
+  updateCartItemsList();
+
+  alert("Cart has been emptied!");
+  saveCartToLocalStorage();
 }
 
 function updateSubtotal() {
@@ -31,7 +45,7 @@ function updateCartItemsList() {
 
   cartItems.forEach((item, index) => {
     const li = document.createElement("li");
-    li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+    li.textContent = `${item.name} - £${item.price.toFixed(2)}`;
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
     removeButton.addEventListener("click", () => removeFromCart(index));
@@ -40,3 +54,22 @@ function updateCartItemsList() {
     cartItemsList.appendChild(li);
   });
 }
+
+function saveCartToLocalStorage() {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  localStorage.setItem("subtotal", subtotal.toFixed(2));
+}
+
+function loadCartFromLocalStorage() {
+  const savedCartItems = localStorage.getItem("cartItems");
+  const savedSubtotal = localStorage.getItem("subtotal");
+
+  if (savedCartItems && savedSubtotal) {
+    cartItems = JSON.parse(savedCartItems);
+    subtotal = parseFloat(savedSubtotal);
+    updateCartItemsList();
+    updateSubtotal();
+  }
+}
+
+window.addEventListener("load", loadCartFromLocalStorage);
